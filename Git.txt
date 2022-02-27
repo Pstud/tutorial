@@ -1,0 +1,16 @@
+Git
+
+让Git以彩色显示。
+$ git config --global color.ui auto
+为Git命令设定别名。例如：把「checkout」缩略为「co」，然后就使用「co」来执行命令。
+$ git config --global alias.co checkout
+如果在Windows使用命令行 (Git Bash), 含非ASCII字符的文件名会显示为 "\346\226\260\350\246..."。若设定如下，就可以让含非ASCII字符的文件名正确显示了。
+$ git config --global core.quotepath off
+若在Windows使用命令行，您只能输入ASCII字符。所以，如果您的提交信息包含非ASCII字符，请不要使用-m选项，而要用外部编辑器输入。
+外部编辑器必须能与字符编码UTF-8和换行码LF兼容。
+git config --global core.editor "\"[使用编辑区的路径]\""
+将文件加入到索引，要使用add命令。在<file>指定加入索引的文件。用空格分割可以指定多个文件。
+$ git add <file>..
+Tips（小撇步 ）
+指定参数「.」，可以把所有的文件加入到索引。
+$ git add .
